@@ -131,7 +131,6 @@ const teamMembers = [
     title: "CEO | Board Member | Project Manager",
     roleDescription:
       "With 7+ years of software development expertise, CTO roles, and international client collaboration, now steering Rigel to new heights.",
-    linkedIn: "https://www.linkedin.com/in/kalid-abdu-871a0422a/",
     github: "https://github.com/Kalid10",
     upwork:
       "https://www.upwork.com/freelancers/~01941e5442f9956d70?referrer_url_path=%2Fab%2Fprofiles%2Fsearch%2Fdetails%2F~01941e5442f9956d70%2Fprofile",
@@ -143,7 +142,6 @@ const teamMembers = [
     title: "CTO | Board Member | Technical Lead",
     roleDescription:
       "Our CTO is the lead author on an IEEE Access publication on unsupervised machine learning algorithms, involved in internationally nominated projects.",
-    linkedIn: "http://www.linkedin.com/in/yosefseboka",
     github: "https://github.com/adilabdu",
     upwork: "https://www.upwork.com/freelancers/~012639c223643a15e8",
     location: "Ethiopia",
@@ -155,7 +153,6 @@ const teamMembers = [
     title: "Full Stack Developer | Board Member | COO",
     roleDescription:
       "As a dynamic leader and skilled full-stack developer, Biniyam's strategic insights and technical expertise drive our company's success and growth.",
-    linkedIn: "https://www.linkedin.com/in/biniyam-lemma-2a580615a/",
     github: "https://github.com/biniya",
     location: "Ethiopia",
   },
@@ -167,6 +164,7 @@ const teamMembers = [
       "An analyst with a strong engineering background adeptly devises innovative approaches to drive growth and enhance operational efficiency.",
     linkedIn: "https://www.linkedin.com/in/yosefseboka",
     github: "https://github.com/yosef-seboka",
+    upwork: "https://www.upwork.com/freelancers/~0145c7d9f4bbed432b",
     location: "Ethiopia",
   },
   {
@@ -179,22 +177,6 @@ const teamMembers = [
     location: "Ethiopia",
   },
   {
-    name: "Banchialem Maru",
-    imageSrc: placeHolder,
-    title: "Board Member | Strategic Advisor | Investor ",
-    roleDescription:
-      "A visionary and empathetic leader who is passionately dedicated to helping others achieve their goals. With an unwavering commitment to consistently inspiring and empowering those around.",
-    location: "Ethiopia",
-  },
-  {
-    name: "Thomas Melesse",
-    imageSrc: placeHolder,
-    title: "Board Member | Strategic Advisor | Investor",
-    roleDescription:
-      "A keen investor who brings his sharp business acumen to our team. Thomas' strategic investments and insights significantly contribute to the company's ongoing success.",
-    location: "Ethiopia",
-  },
-  {
     name: "Bereket Gobeze",
     imageSrc: bereket,
     title: "Senior Software Engineer | Technical Advisor",
@@ -202,6 +184,7 @@ const teamMembers = [
       "An accomplished senior software engineer and former Anbessa Tech CEO, now an advisor and senior software engineer at our company, driving technological excellence.",
     linkedIn: "https://www.linkedin.com/in/bereket-gobeze/",
     github: "https://github.com/bereketnyb",
+    upwork: "https://www.upwork.com/freelancers/~014a86bfed9c9882bf?referrer_url_path=%2Fnx%2Fsearch%2Ftalent%2F",
     location: "Ethiopia",
   },
   {
