@@ -1,7 +1,11 @@
 <template>
-  <div class="flex-none w-fit sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 py-3 m-2">
+  <div class="flex-none h-fit w-fit text-center pr-5 py-1">
     <!-- <box-icon :name="company" class="w-8 h-8"></box-icon> -->
-    <div class="font-semibold md:font-bold uppercase text-gray-200 text-center text-sm lg:text-xl">{{ label }}</div>
+    <div
+      class="font-semibold md:font-bold uppercase text-base text-center lg:text-base"
+    >
+      {{ label }}
+    </div>
   </div>
 </template>
 
@@ -9,14 +13,12 @@
 defineProps({
   company: {
     type: String,
-    default: true
+    default: true,
   },
   label: {
     type: String,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 </script>
-<style scoped>
-
-</style>
+<style scoped></style>
