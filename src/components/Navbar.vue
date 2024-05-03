@@ -1,73 +1,81 @@
 <template>
-  <nav
-    v-if="showNavBar"
-    :class="navBarStore.style"
-    class="fixed top-0 w-full z-50 lg:px-16 md:px-10 lg:py-3 py-2 md:flex md:justify-between md:items-center text-center font-semibold font-lexend"
-  >
-    <div class="flex items-center justify-between">
-      <router-link
-        :class="navBarStore.secondaryStyle"
-        class="w-fit text-2xl px-5 font-bold rounded-md lowercase"
-        href="#home"
-        to="/"
-      >
-        rigel.<span :class="navBarStore.logoStyle">studio</span>
-      </router-link>
-
-      <!-- Mobile menu button -->
-      <div class="flex md:hidden" @click="handleMenuClick">
-        <button
-          v-if="!navBarStore.showNavBar"
-          :class="navBarStore.secondaryStyle"
-          class="pr-4"
-          type="button"
-        >
-          <svg class="w-6 h-6" viewBox="0 0 24 24">
-            <path
-              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-              fill-rule="evenodd"
-            ></path>
-          </svg>
-        </button>
-        <box-icon
-          v-else
-          :class="navBarStore.menuButtonStyle"
-          name="x"
-        ></box-icon>
-      </div>
-    </div>
-
-    <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-    <ul
-      :class="
-        navBarStore.showNavBar
-          ? 'flex  mt-10 z-50 ' + navBarStore.menuStyle
-          : 'hidden'
-      "
-      class="flex-col underline underline-offset-8 lg:no-underline font-light h-screen md:h-fit space-y-10 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
+  <div class="w-full flex -z-50 items-center">
+    <nav
+      v-if="showNavBar"
+      :class="navBarStore.style"
+      class="fixed top-0 w-full z-50 lg:px-24 md:px-10 lg:pt-6 py-2 md:flex md:justify-between md:space-x-5 md:items-center text-center font-semibold font-lexend"
     >
-      <a
-        v-for="(section, index) in sections"
-        v-if="!isOnSubRoute"
-        :key="index"
-        :class="'border-' + navBarStore.secondaryStyle"
-        :href="section.linkId"
-        class="text-md hover:border-b-2 font-medium hover:font-bold uppercase"
-        @click="scrollToSection($event, section.linkId)"
-      >
-        {{ section.name }}
-      </a>
+      <div class="flex w-fit items-center">
+        <router-link
+          :class="navBarStore.secondaryStyle"
+          class="w-fit text-lg px-5 font-bold rounded-md lowercase"
+          href="#home"
+          to="/"
+        >
+          rigel.<span :class="navBarStore.logoStyle">studio</span>
+        </router-link>
 
-      <a
-        v-if="isOnSubRoute"
-        class="uppercase hover:text-primary"
-        href="#contact"
-        @click="navBarStore.toggleNavBar()"
+        <!-- Mobile menu button -->
+        <div class="flex md:hidden" @click="handleMenuClick">
+          <button
+            v-if="!navBarStore.showNavBar"
+            :class="navBarStore.secondaryStyle"
+            class="pr-4"
+            type="button"
+          >
+            <svg class="w-6 h-6" viewBox="0 0 24 24">
+              <path
+                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                fill-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <box-icon
+            v-else
+            :class="navBarStore.menuButtonStyle"
+            name="x"
+          ></box-icon>
+        </div>
+      </div>
+
+      <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+      <ul
+        :class="
+          navBarStore.showNavBar
+            ? 'flex  mt-10 z-50 ' + navBarStore.menuStyle
+            : 'hidden'
+        "
+        class="flex-col underline underline-offset-8 lg:no-underline font-light h-screen md:h-fit space-y-10 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
       >
-        Contact
-      </a>
-    </ul>
-  </nav>
+        <a
+          v-for="(section, index) in sections"
+          v-if="!isOnSubRoute"
+          :key="index"
+          :class="'border-' + navBarStore.secondaryStyle"
+          :href="section.linkId"
+          class="text-sm hover:border-b-2 font-normal hover:font-bold uppercase"
+          @click="scrollToSection($event, section.linkId)"
+        >
+          {{ section.name }}
+        </a>
+
+        <a
+          v-if="isOnSubRoute"
+          class="uppercase hover:text-primary"
+          href="#contact"
+          @click="navBarStore.toggleNavBar()"
+        >
+          Contact
+        </a>
+
+        <div
+          class="bg-primary rounded-lg cursor-pointer hover:scale-105 px-4 py-2 text-white"
+        >
+          Book a 15-min Call
+        </div>
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <script setup>

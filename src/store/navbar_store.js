@@ -3,8 +3,8 @@ import { defineStore } from "pinia";
 export const useNavBarStore = defineStore({
   id: "navbar",
   state: () => ({
-    style: "bg-black",
-    secondaryStyle: "fill-gray-500 text-gray-100",
+    style: "bg-white",
+    secondaryStyle: "fill-gray-500 text-black",
     logoStyle: "text-primary",
     menuStyle: "bg-white text-black",
     menuButtonStyle: "fill-primary",
@@ -24,9 +24,9 @@ export const useNavBarStore = defineStore({
       switch (this.selectedProject) {
         case 1:
           this.setNavBarTheme(
-            "bg-purple-600 text-purple-50",
-            "text-purple-50 fill-purple-50",
-            "text-amber-400",
+            "bg-white text-black",
+            "text-black fill-purple-50",
+            "text-primary",
           );
           this.setMenuProperty(
             "bg-purple-600 text-purple-50",
@@ -105,7 +105,7 @@ export const useNavBarStore = defineStore({
             "fill-primary",
           );
           this.setNavBarTheme(
-            "bg-black text-gray-100",
+            "bg-white text-gray-100",
             "text-white fill-gray-500",
             "text-primary",
           );
