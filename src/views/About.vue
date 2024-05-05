@@ -1,5 +1,6 @@
 <template>
   <div
+    ref="container"
     class="min-h-screen w-full font-lexend flex justify-evenly py-14 bg-gray-100"
   >
     <section class="w-5/12 flex flex-col space-y-10">
@@ -12,12 +13,11 @@
         <div
           v-for="(item, index) in list"
           :key="index"
-          :class="
+          :class="`item-${index} ${
             index === selectedItemIndex
               ? 'bg-white'
-              : ' hover:bg-gray-200 opacity-50'
-          "
-          class="flex items-center px-3 py-8 font-light space-x-5 cursor-pointer"
+              : 'hover:bg-gray-200 opacity-50'
+          } flex items-center px-3 py-8 font-light space-x-5 cursor-pointer`"
           @click="selectedItemIndex = index"
         >
           <div
@@ -54,7 +54,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
 const selectedItemIndex = ref(0);
 
@@ -80,6 +80,43 @@ const list = [
     description: "Gain flexibility to adjust and expand on the fly",
   },
 ];
+
+const container = ref(null);
+
+onMounted(() => {
+  container.value.addEventListener("wheel", handleScroll);
+});
+
+function handleScroll(event) {
+  const delta = Math.sign(event.deltaY);
+  const newIndex = selectedItemIndex.value + delta;
+  if (newIndex >= 0 && newIndex < list.length) {
+    event.preventDefault(); // Prevent default only when index change is valid
+    selectedItemIndex.value = newIndex;
+    animateScroll();
+  }
+}
+
+function animateScroll() {
+  const selectedItem = document.querySelector(
+    `.item-${selectedItemIndex.value}`,
+  );
+  if (selectedItem && container.value) {
+    const containerRect = container.value.getBoundingClientRect();
+    const selectedItemRect = selectedItem.getBoundingClientRect();
+    const scrollTop =
+      selectedItem.offsetTop -
+      containerRect.top -
+      container.value.scrollTop +
+      selectedItemRect.height / 2 -
+      containerRect.height / 2;
+
+    container.value.scrollTo({
+      top: container.value.scrollTop + scrollTop,
+      behavior: "smooth",
+    });
+  }
+}
 </script>
 
 <style scoped></style>
