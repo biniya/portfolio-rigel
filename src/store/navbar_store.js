@@ -5,9 +5,9 @@ export const useNavBarStore = defineStore({
   state: () => ({
     style: "bg-white",
     secondaryStyle: "fill-gray-500 text-black",
-    logoStyle: "text-primary",
+    logoStyle: "text-brand-350",
     menuStyle: "bg-white text-black",
-    menuButtonStyle: "fill-primary",
+    menuButtonStyle: "fill-brand-350",
     showNavBar: false,
     showMenu: false,
     selectedProject: 1,
@@ -26,7 +26,7 @@ export const useNavBarStore = defineStore({
           this.setNavBarTheme(
             "bg-white text-black",
             "text-black fill-purple-50",
-            "text-primary",
+            "text-brand-350",
           );
           this.setMenuProperty(
             "bg-purple-600 text-purple-50",
@@ -73,7 +73,7 @@ export const useNavBarStore = defineStore({
           this.setNavBarTheme(
             "bg-white text-black",
             "text-gray-800 fill-gray-800",
-            "text-primary",
+            "text-brand-350",
           );
           this.setMenuProperty("bg-white text-black", "fill-black");
           break;
@@ -101,13 +101,13 @@ export const useNavBarStore = defineStore({
       switch (this.currentPage) {
         case "home":
           this.setMenuProperty(
-            "bg-gradient-to-b from-black to-primary/20 text-gray-100",
-            "fill-primary",
+            "bg-gradient-to-b from-black to-brand-350/20 text-gray-100",
+            "fill-brand-350",
           );
           this.setNavBarTheme(
             "bg-white text-gray-100",
             "text-white fill-gray-500",
-            "text-primary",
+            "text-brand-350",
           );
           break;
         case "about":
@@ -115,7 +115,7 @@ export const useNavBarStore = defineStore({
           this.setNavBarTheme(
             "bg-gray-100 text-gray-700",
             "text-gray-800 fill-gray-800",
-            "text-primary",
+            "text-brand-350",
           );
           break;
         case "projects":
@@ -126,14 +126,14 @@ export const useNavBarStore = defineStore({
           this.setNavBarTheme(
             "bg-gray-100 text-gray-800",
             "text-gray-800 fill-gray-800",
-            "text-primary",
+            "text-brand-350",
           );
           break;
         case "contact":
           this.setNavBarTheme(
             "bg-gray-100 text-gray-800",
             "text-gray-800 fill-gray-800",
-            "text-primary",
+            "text-brand-350",
           );
           this.setMenuProperty("bg-gray-100 text-black", "fill-black");
           break;

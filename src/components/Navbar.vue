@@ -5,7 +5,7 @@
       :class="navBarStore.style"
       class="fixed top-0 w-full z-50 lg:px-24 md:px-10 lg:pt-6 py-2 md:flex md:justify-between md:space-x-5 md:items-center text-center font-semibold font-lexend"
     >
-      <div class="flex w-fit items-center">
+      <div class="flex w-fit pl-10 items-center">
         <router-link
           :class="navBarStore.secondaryStyle"
           class="w-fit text-lg px-5 font-bold rounded-md lowercase"
@@ -69,7 +69,7 @@
         </a>
 
         <div
-          class="bg-primary rounded-lg cursor-pointer hover:scale-105 px-4 py-2 text-white"
+          class="bg-brand-350 rounded-lg cursor-pointer hover:scale-105 px-4 py-2 text-white"
         >
           Book a 15-min Call
         </div>
