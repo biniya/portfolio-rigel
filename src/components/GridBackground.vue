@@ -16,6 +16,6 @@
 
 <style scoped>
 .gradient-mask {
-  mask-image: conic-gradient(rgba(0, 0, 0, 1) 0%, transparent 95%);
+  mask-image: conic-gradient(rgba(0, 0, 0, 1) 10%, transparent 60%);
 }
 </style>
