@@ -1,7 +1,8 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  prefix: "",
+const animate = require("tailwindcss-animate");
 
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  prefix: "",
   content: [
     "./pages/**/*.{js,jsx,vue}",
     "./components/**/*.{js,jsx,vue}",
@@ -104,5 +105,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animate],
 };

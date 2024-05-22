@@ -18,8 +18,9 @@
     "gsap": "^3.12.5",
     "lucide-vue-next": "^0.378.0",
     "pinia": "^2.1.4",
-    "radix-vue": "^1.7.4",
+    "radix-vue": "^1.8.1",
     "tailwind-merge": "^2.3.0",
+    "vaul-vue": "^0.1.2",
     "vue": "^3.2.47",
     "vue-router": "^4.2.4",
     "vue3-touch-events": "^4.1.3"
