@@ -37,25 +37,21 @@
 
         <slot name="additional-project-description" />
 
-        <div class="flex space-x-6 w-full">
+        <div class="flex space-x-6 items-center w-full">
           <div
             class="flex space-x-2 group w-fit py-2 hover:scale-105 cursor-pointer items-center"
           >
-            <span class="font-medium text-md">View Project Details</span>
-            <box-icon
-              class="fill-black h-7 w-7"
-              name="right-top-arrow-circle"
-              type="solid"
-            ></box-icon>
+            <ProjectDetailsDrawer :project="project" />
           </div>
 
           <a
             :class="[
               { 'opacity-60 cursor-not-allowed': project.demoLink === null },
+              { 'hover:scale-105': project.demoLink !== null },
               project.theme,
             ]"
             :href="project?.demoLink"
-            class="flex space-x-2 group w-fit px-5 py-2 cursor-pointer hover:shadow-sm rounded-3xl items-center"
+            class="flex space-x-2 group w-fit h-fit py-2.5 px-5 cursor-pointer hover:shadow-sm rounded-3xl items-center"
             target="_blank"
           >
             <span
@@ -64,7 +60,6 @@
               >{{ project.demoLink ? "View Demo" : "Demo Unavailable" }}</span
             >
             <box-icon
-              :class="project.demoLink !== null ? 'group-hover:fill-white' : ''"
               class="fill-black h-7 w-7"
               name="globe"
               type="solid"
@@ -77,6 +72,8 @@
 </template>
 
 <script setup>
+import ProjectDetailsDrawer from "./ProjectDetailsDrawer.vue";
+
 defineProps({
   project: {
     type: Object,
