@@ -4,126 +4,22 @@
     <section
       class="w-7/12 items-center flex flex-col space-y-5 justify-evenly min-h-screen h-screen pt-12"
     >
-      <div
-        class="w-full h-3/5 py-3 items-center flex-col space-y-3 md:space-y-0 flex justify-evenly"
-      >
-        <div
-          class="flex flex-col w-full font-lexend justify-center space-y-8 lg:space-y-10"
-        >
-          <div
-            class="text-5xl w-full text-start lg:text-6xl flex flex-col space-y-2 text-black font-semibold"
-          >
-            <span class=""> More Than Clients,</span>
-            <span class="relative whitespace-nowrap w-fit">
-              <span class="relative">We Become </span>
-              <svg
-                aria-hidden="true"
-                class="absolute right-0 top-[80%] h-[0.58em] w-5/12 fill-brand-350"
-                preserveAspectRatio="none"
-                viewBox="0 0 418 42"
-              >
-                <path
-                  d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"
-                ></path>
-                <span class="text-brand-350">Partners</span>
-              </svg>
-            </span>
-          </div>
-
-          <!--          Mobile version-->
-          <p class="lg:hidden font-light w-11/12">
-            With creativity and technology, we craft software solutions that
-            redefine possibilities. Join us in forging a digital ETHIOPIA!
-          </p>
-
-          <!--          Desktop version-->
-          <p
-            class="w-11/12 text-lg mt-8 font-light text-gray-600 hidden md:inline-block"
-          >
-            We invest in understanding your vision and collaborate for
-            success.<br />
-            Together, we'll strategize and celebrate wins.
-          </p>
-        </div>
-
-        <div class="flex w-full space-x-5">
-          <div
-            class="bg-brand-400 rounded-lg cursor-pointer hover:scale-105 px-6 text-lg py-3 font-semibold text-white"
-          >
-            Book a 15-min Call
-          </div>
-
-          <a
-            class="inline-flex w-fit items-center justify-center text-lg font-medium cursor-pointer hover:scale-105 hover:font-semibold hover:underline duration-200 px-4 py-1 text-center"
-            href="#contact"
-            >See Recent Works
-            <ChevronRightIcon class="w-6 pl-1" />
-          </a>
-        </div>
-      </div>
-
-      <div class="flex flex-col flex-wrap w-full space-y-3 py-2">
-        <div class="font-lexend font-light text-sm text-gray-600">
-          Working with
-        </div>
-
-        <div ref="companyList" class="flex flex-wrap">
-          <company-item company="" label="Ankeboot Books"></company-item>
-          <company-item company="bo" label="ELSARO"></company-item>
-          <company-item company="bo" label="BB Trading"></company-item>
-          <!--          <company-item company="bo" label="Abadir SuperMarkets"></company-item>-->
-          <company-item company="bo" label="Maraki Fitness"></company-item>
-          <company-item company="bo" label="AIA"></company-item>
-          <company-item company="bo" label="Bios College"></company-item>
-          <company-item company="bo" label="Gurella Marketing"></company-item>
-          <company-item company="bo" label="And more"></company-item>
-        </div>
-      </div>
+      <Description />
+      <Partners />
     </section>
-    <div
-      class="w-5/12 2xl:w-4/12 -mt-20 flex flex-wrap h-3/5 justify-evenly items-center"
-    >
-      <GradientBorder
-        class="!w-44 !h-40 mr-10"
-        gradient-style="bg-gradient-to-bl from-sky-500 via-purple-500 to-indigo-700"
-      >
-        <template #default>
-          <div class="font-bold text-6xl">7+</div>
-          <div>Experience</div>
-        </template>
-      </GradientBorder>
-
-      <GradientBorder class="!w-44 !h-40">
-        <template #default>
-          <div class="font-bold text-6xl">12+</div>
-          <div>Developers</div>
-        </template>
-      </GradientBorder>
-
-      <GradientBorder class="!w-44 !h-40 mr-10">
-        <template #default>
-          <div class="font-bold text-6xl">5/5</div>
-          <div>Review</div>
-        </template>
-      </GradientBorder>
-
-      <GradientBorder class="!w-44 !h-40">
-        <template #default>
-          <div class="font-bold text-6xl">20+</div>
-          <div>Projects</div>
-        </template>
-      </GradientBorder>
-    </div>
+    <Stats />
   </section>
 </template>
 
 <script setup>
 import AOS from "aos";
-import CompanyItem from "../components/CompanyItem.vue";
 import { onMounted, ref } from "vue";
-import { ChevronRightIcon } from "@heroicons/vue/20/solid/index.js";
+import { gsap } from "gsap";
+import { TextPlugin } from "gsap/TextPlugin";
 import GridBackground from "../components/GridBackground.vue";
-import GradientBorder from "../components/GradientBorder.vue";
+import Stats from "../views/Hero/Stats.vue";
+import Partners from "../views/Hero/Partners.vue";
+import Description from "../views/Hero/Description.vue";
 
 AOS.init();
 
@@ -146,65 +42,67 @@ const scrollCompanyList = () => {
 };
 
 onMounted(() => {
+  gsap.registerPlugin(TextPlugin);
+
+  const shuffleElements = document.querySelectorAll(".shuffle");
+  shuffleElements.forEach((element) => {
+    const finalValue = parseInt(element.getAttribute("data-final"));
+    gsap.to(element, {
+      duration: 2,
+      textContent: finalValue,
+      roundProps: "textContent",
+      ease: "none",
+      snap: { textContent: 1 },
+      delay: 2,
+      onUpdate: function () {
+        element.textContent = Math.round(element.textContent) + "+";
+      },
+    });
+  });
+
   setInterval(scrollCompanyList, 20);
+
+  gsap.from(".title", {
+    opacity: 0,
+    x: -50,
+    stagger: 0.2,
+    duration: 4,
+    ease: "back.out(1.7)",
+  });
+
+  gsap.from(".title-part", {
+    opacity: 0,
+    scale: 0.8,
+    duration: 1,
+    ease: "back.out(1.7)",
+    delay: 1,
+  });
+
+  gsap.from(".buttons", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power2.out",
+    delay: 1.5,
+  });
+
+  gsap.from(".stats", {
+    opacity: 0,
+    y: 50,
+    stagger: 0.2,
+    duration: 1,
+    ease: "power2.out",
+    delay: 2,
+  });
+  gsap.from(".company-list > *", {
+    opacity: 0,
+    y: 50,
+    stagger: 0.2,
+    duration: 1.5,
+    ease: "power2.inOut",
+    delay: 2,
+  });
 });
 </script>
 
-<style>
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari, and Opera */
-}
-
-.scrollbar-hide {
-  -ms-overflow-style: none; /* for Internet Explorer and Edge */
-  scrollbar-width: none; /* for Firefox */
-}
-
-.bg-image {
-  background-image: url("../assets/dark_star.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow:
-      0 0 10px #fff,
-      0 0 20px #23e0fd,
-      0 0 30px #08f,
-      0 0 40px #08f,
-      0 0 50px #08f,
-      0 0 60px #08f;
-  }
-  50% {
-    box-shadow:
-      0 0 20px #fff,
-      0 0 30px #23e0fd,
-      0 0 40px #08f,
-      0 0 50px #08f,
-      0 0 60px #08f,
-      0 0 70px #08f;
-  }
-  100% {
-    box-shadow:
-      0 0 10px #fff,
-      0 0 20px #23e0fd,
-      0 0 30px #08f,
-      0 0 40px #08f,
-      0 0 50px #08f,
-      0 0 60px #08f;
-  }
-}
-
-.glow {
-  box-shadow:
-    0 0 10px #23e0fd,
-    0 0 20px #23e0fd,
-    0 0 30px #08f,
-    0 0 40px #08f,
-    0 0 50px #08f,
-    0 0 60px #08f;
-  animation: pulse 2s infinite;
-}
-</style>
+<style></style>
