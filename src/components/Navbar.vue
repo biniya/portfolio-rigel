@@ -8,7 +8,7 @@
       <div class="flex w-fit pl-10 items-center">
         <router-link
           :class="navBarStore.secondaryStyle"
-          class="w-fit text-lg px-5 font-bold rounded-md lowercase"
+          class="w-fit text-lg px-5 rounded-md lowercase font-inter"
           href="#home"
           to="/"
         >

@@ -1,6 +1,6 @@
 <template>
   <section
-    class="w-8/12 mx-auto flex flex-col space-y-10 py-8 items-center min-h-screen"
+    class="w-9/12 mx-auto flex flex-col space-y-10 py-8 items-center min-h-screen"
   >
     <div class="font-bold text-5xl text-center pt-10 pb-5">Recent Works</div>
 

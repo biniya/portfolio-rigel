@@ -1,7 +1,7 @@
 <template>
   <div :class="gradientStyle" class="rounded-md w-full h-full p-1">
     <div
-      class="bg-white h-full w-full flex flex-col items-center justify-evenly"
+      class="bg-white rounded-sm h-full w-full flex flex-col items-center justify-evenly"
     >
       <slot />
     </div>
