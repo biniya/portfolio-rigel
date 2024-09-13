@@ -1,36 +1,36 @@
 <template>
   <section
-    class="w-full h-[32rem] my-4 py-10 font-lexend bg-white flex justify-center"
+      class="w-full h-auto lg:h-[32rem] my-4 py-5 lg:py-10 font-lexend bg-white flex justify-center"
   >
     <div
-      :class="direction === 'reverse' ? 'flex-row-reverse' : ''"
-      class="w-11/12 min-h-full h-full flex justify-between"
+        :class="direction === 'reverse' ? 'flex-col lg:flex-row-reverse lg:space-y-0 space-y-20 pt-20 lg:pt-0 pb-10 lg:pb-0 ' : 'flex-col lg:flex-row lg:space-y-0 space-y-20'"
+        class="w-full lg:w-11/12 min-h-full h-full flex justify-between lg:border-none border-b"
     >
       <div
-        v-if="showImage"
-        :class="project.theme"
-        class="w-5/12 flex h-[28rem] items-center p-5 rounded-2xl"
+          v-if="showImage"
+          :class="project.theme"
+          class="w-full lg:w-5/12 flex h-[12rem] sm:h-[18rem] lg:h-[28rem] items-center p-5 rounded-2xl"
       >
         <img
-          :src="project.image"
-          alt="project-name"
-          class="md:h-fit rounded-2xl object-contain h-[12rem] sm:h-[15rem] w-[40rem] z-10 animate-bounce animate-once"
-          loading="eager"
+            :src="project.image"
+            alt="project-name"
+            class="h-full object-contain rounded-2xl"
+            loading="eager"
         />
       </div>
 
       <div
-        :class="showImage ? 'w-6/12' : 'w-11/12'"
-        class="flex justify-center flex-col space-y-8"
+          :class="showImage ? 'w-full lg:w-6/12' : 'w-full lg:w-11/12'"
+          class="flex justify-center flex-col space-y-4 lg:space-y-8 px-5"
       >
-        <div class="font-semibold w-11/12 text-4xl">
+        <div class="font-semibold w-full lg:w-11/12 text-2xl lg:text-4xl">
           {{ project.name }}
         </div>
 
         <div
-          v-for="(item, index) in project.description"
-          :key="index"
-          class="font-light"
+            v-for="(item, index) in project.description"
+            :key="index"
+            class="font-light text-sm lg:text-base"
         >
           {{ item }}
         </div>
@@ -39,30 +39,24 @@
 
         <div class="flex space-x-6 items-center w-full">
           <div
-            class="flex space-x-2 group w-fit py-2 hover:scale-105 cursor-pointer items-center"
+              class="flex space-x-2 group w-fit py-2 hover:scale-105 cursor-pointer items-center"
           >
             <ProjectDetailsDrawer :project="project" />
           </div>
 
           <a
-            :class="[
-              { 'opacity-60 cursor-not-allowed': project.demoLink === null },
-              { 'hover:scale-105': project.demoLink !== null },
-              project.theme,
-            ]"
-            :href="project?.demoLink"
-            class="flex space-x-2 group w-fit h-fit py-2.5 px-5 cursor-pointer hover:shadow-sm rounded-3xl items-center"
-            target="_blank"
+              :class="[project.theme, project.demoLink ? 'hover:scale-105' : 'opacity-60 cursor-not-allowed']"
+              :href="project.demoLink"
+              class="flex space-x-2 group w-fit h-fit py-2.5 px-5 hover:shadow-sm rounded-3xl items-center"
+              target="_blank"
           >
             <span
-              :class="'text:' + project.theme"
-              class="font-medium text-md text-black"
-              >{{ project.demoLink ? "View Demo" : "Demo Unavailable" }}</span
-            >
+                class="font-medium text-md text-black"
+            >{{ project.demoLink ? 'View Demo' : 'Demo Unavailable' }}</span>
             <box-icon
-              class="fill-black h-7 w-7"
-              name="globe"
-              type="solid"
+                class="fill-black h-7 w-7"
+                name="globe"
+                type="solid"
             ></box-icon>
           </a>
         </div>
@@ -91,6 +85,19 @@ defineProps({
 </script>
 
 <style scoped>
+/* Add responsive adjustments */
+@media (max-width: 640px) {
+  section {
+    flex-direction: column;
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+/* Bounce animation */
 @keyframes bounce-once {
   0% {
     transform: translateY(0);
@@ -109,12 +116,5 @@ defineProps({
   transition-property: transform;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
-}
-
-/* Customize scrollbar styles */
-::-webkit-scrollbar {
-  width: 1px;
-  height: 3px;
-  background: white;
 }
 </style>

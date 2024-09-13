@@ -2,7 +2,7 @@
   <div class="flex-none h-fit w-fit text-center pr-5 py-1">
     <!-- <box-icon :name="company" class="w-8 h-8"></box-icon> -->
     <div
-      class="font-semibold md:font-bold uppercase text-base text-center lg:text-base"
+      class="font-semibold md:font-bold uppercase text-sm text-center lg:text-base"
     >
       {{ label }}
     </div>

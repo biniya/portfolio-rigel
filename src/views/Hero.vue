@@ -1,19 +1,26 @@
 <template>
-  <section class="flex justify-between h-screen items-center w-10/12 mx-auto">
-    <GridBackground />
+  <section
+      class="flex flex-col md:flex-row h-auto lg:justify-between lg:h-screen items-center w-11/12 lg:w-10/12 mx-auto py-0 pb-10 lg:py-0"
+  >
+    <!-- Background Grid -->
+    <GridBackground class="absolute top-0 left-0 w-full h-full lg:block hidden" />
+
+    <!-- Left Section (Description and Partners) -->
     <section
-      class="w-7/12 items-center flex flex-col space-y-5 justify-evenly min-h-screen h-screen pt-12"
+        class="w-full lg:w-7/12 items-center flex flex-col lg:space-y-4 space-y-10 justify-evenly mt-20 lg:mt-0 lg:min-h-screen lg:pt-12"
     >
       <Description />
       <Partners />
     </section>
+
+    <!-- Right Section (Stats) -->
     <Stats />
   </section>
 </template>
 
 <script setup>
 import AOS from "aos";
-import { onMounted, ref } from "vue";
+import { onMounted } from "vue";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import GridBackground from "../components/GridBackground.vue";
@@ -24,22 +31,8 @@ import Description from "../views/Hero/Description.vue";
 AOS.init();
 
 AOS.init({
-  // Global settings:
-  disable: false,
   duration: 1600,
 });
-const companyList = ref();
-
-const scrollCompanyList = () => {
-  if (
-    companyList.value.scrollLeft >=
-    companyList.value.scrollWidth - companyList.value.clientWidth
-  ) {
-    companyList.value.scrollLeft = 0;
-  } else {
-    companyList.value.scrollLeft += 1;
-  }
-};
 
 onMounted(() => {
   gsap.registerPlugin(TextPlugin);
@@ -59,8 +52,6 @@ onMounted(() => {
       },
     });
   });
-
-  setInterval(scrollCompanyList, 20);
 
   gsap.from(".title", {
     opacity: 0,
@@ -94,15 +85,7 @@ onMounted(() => {
     ease: "power2.out",
     delay: 2,
   });
-  gsap.from(".company-list > *", {
-    opacity: 0,
-    y: 50,
-    stagger: 0.2,
-    duration: 1.5,
-    ease: "power2.inOut",
-    delay: 2,
-  });
 });
 </script>
 
-<style></style>
+<style scoped></style>

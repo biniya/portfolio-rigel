@@ -2,12 +2,12 @@
   <div
       ref="aboutSection"
       id="about"
-      class="max-h-fit w-full font-lexend flex justify-evenly py-5 bg-gray-100"
+      class="max-h-fit w-full font-lexend flex flex-col lg:flex-row justify-evenly py-5 bg-gray-100"
       @wheel="handleWheel"
   >
     <!-- Left Tabs Section -->
-    <section class="w-5/12 flex flex-col space-y-10">
-      <div class="text-3xl text-black font-light">
+    <section class="w-full lg:w-5/12 flex flex-col space-y-10 px-4 lg:px-0">
+      <div class="text-2xl sm:text-3xl lg:text-3xl text-black font-light">
         Full digital product expertise <br />
         <span class="pr-4 font-semibold text-primary">under one roof</span>
       </div>
@@ -17,10 +17,8 @@
             v-for="(item, index) in tabs"
             :key="index"
             :class="`item-${index} ${
-            index === activeTab
-              ? 'bg-white'
-              : 'hover:bg-gray-200 opacity-50'
-          } flex items-center px-3 py-8 font-light space-x-5 cursor-pointer`"
+            index === activeTab ? 'bg-white' : 'hover:bg-gray-200 opacity-50'
+          } flex items-center px-3 py-5 sm:py-8 font-light space-x-3 sm:space-x-5 cursor-pointer`"
             @click="setActiveTab(index)"
         >
           <div
@@ -31,13 +29,13 @@
           </div>
           <div
               :class="index === activeTab ? 'pr-3 font-bold' : 'font-semibold'"
-              class="w-3/12 pl-4 text-3xl"
+              class="w-4/12 sm:w-3/12 pl-4 text-lg sm:text-2xl lg:text-3xl"
           >
             {{ item.title }}
           </div>
           <div
               :class="index === activeTab ? 'inline-flex' : 'hidden'"
-              class="w-8/12 opacity-80"
+              class="w-7/12 opacity-80 text-sm sm:text-base lg:text-lg"
           >
             {{ item.description }}
           </div>
@@ -46,8 +44,8 @@
     </section>
 
     <!-- Right Content Section -->
-    <section class="w-4/12 text-lg flex items-center leading-loose opacity-70">
-      <div class="bg-white rounded-xl text-center shadow-sm p-3">
+    <section class="w-full lg:w-4/12 text-base sm:text-lg flex items-center leading-loose opacity-70 mt-10 lg:mt-0 px-4 lg:px-0">
+      <div class="bg-white rounded-xl text-center shadow-sm p-4">
         Whether you want to consult an idea, add missing capabilities, quickly
         expand your team, or hand over a project - we've got you covered.
       </div>
@@ -56,7 +54,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import {ref, onMounted, onBeforeUnmount} from "vue";
 
 // Define the tabs content
 const tabs = ref([
@@ -94,36 +92,27 @@ const setActiveTab = (index) => {
 
 // Custom scrolling within the About section with delay
 const handleWheel = (event) => {
-  // If we are at the first tab and scrolling up, or at the last tab and scrolling down,
-  // we need to stop preventing the default scroll and let the user scroll normally
   if (
-      (activeTab.value === 0 && event.deltaY < 0) || // If first tab and scrolling up
-      (activeTab.value === lastTabIndex && event.deltaY > 0) // If last tab and scrolling down
+      (activeTab.value === 0 && event.deltaY < 0) ||
+      (activeTab.value === lastTabIndex && event.deltaY > 0)
   ) {
-    // Do not prevent default here, let normal scrolling occur
     return;
   }
 
-  // Prevent normal scroll during tab navigation
   event.preventDefault();
 
-  if (isScrolling) return; // Prevent scrolling if already in progress
+  if (isScrolling) return;
+  isScrolling = true;
 
-  isScrolling = true; // Set scrolling lock
-
-  // Handle scrolling down (next tab)
   if (event.deltaY > 0 && activeTab.value < lastTabIndex) {
     activeTab.value++;
-  }
-  // Handle scrolling up (previous tab)
-  else if (event.deltaY < 0 && activeTab.value > 0) {
+  } else if (event.deltaY < 0 && activeTab.value > 0) {
     activeTab.value--;
   }
 
-  // Add a delay before allowing the next scroll event
   setTimeout(() => {
     isScrolling = false;
-  }, 1000); // Adjust the delay as needed
+  }, 1000);
 };
 
 // Detect if the About section is in view and center it
@@ -133,7 +122,7 @@ const scrollToCenter = () => {
   const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
 
   if (isVisible) {
-    aboutSectionElement.scrollIntoView({ behavior: "smooth", block: "center" });
+    aboutSectionElement.scrollIntoView({behavior: "smooth", block: "center"});
   }
 };
 
@@ -150,11 +139,33 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
+/* Make transitions and interactions smoother */
 .tab-content {
   transition: opacity 0.3s ease-in-out;
 }
 
 [v-cloak] {
   display: none;
+}
+
+@media (max-width: 640px) {
+  /* Stack content vertically and adjust font sizes on mobile */
+  section {
+    width: 100%;
+  }
+
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-3xl {
+    font-size: 2rem;
+  }
+
+  .leading-relaxed {
+    line-height: 1.75;
+  }
 }
 </style>

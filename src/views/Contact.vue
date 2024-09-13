@@ -1,16 +1,16 @@
 <template>
   <div class="bg-white relative">
-    <div class="mx-auto w-10/12 px-4 py-16 sm:px-6 lg:px-8 z-20">
-      <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
+    <div class="mx-auto w-11/12 lg:w-10/12 px-4 py-5 lg:py-16 sm:px-6 lg:px-8 z-20">
+      <div class="grid grid-cols-1 gap-x-16 gap-2 lg:gap-y-8 lg:grid-cols-5">
         <div class="lg:col-span-2 lg:py-12">
           <div class="py-6 md:py-0 md:px-6">
-            <h1 class="text-4xl font-bold">
+            <h1 class="text-2xl lg:text-4xl font-bold">
               Get in
               <span class="border-b-4 border-primary cursor-pointer"
                 >Touch</span
               >
             </h1>
-            <p class="pt-2 pb-4">
+            <p class="pt-2 pb-4 text-sm lg:text-2xl">
               Let's connect and discuss how we can assist you. Get in touch now!
             </p>
 
@@ -20,7 +20,7 @@
         <div
           class="rounded-xl z-20 p-5 bg-gray-50 shadow-sm lg:col-span-3 lg:p-12"
         >
-          <form class="space-y-4" @submit.prevent="submitForm">
+          <form class="space-y-2 lg:space-y-4" @submit.prevent="submitForm">
             <div>
               <label class="sr-only" for="name">Name</label>
               <input
@@ -80,9 +80,9 @@
               </div>
             </div>
 
-            <div class="mt-4">
+            <div class="mt-2 lg:mt-4">
               <button
-                class="shadow-md font-medium my-5 py-2 px-4 text-white cursor-pointer bg-primary hover:bg-primary rounded text-lg text-center w-32"
+                class="shadow-md font-medium my-2 lg:my-5 py-2 px-4 text-white cursor-pointer bg-primary hover:bg-primary rounded text-sm lg:text-lg text-center w-32"
                 type="submit"
               >
                 Send

@@ -1,31 +1,29 @@
 <template>
   <section
-    class="w-9/12 mx-auto flex flex-col space-y-10 py-8 items-center min-h-screen"
+      class="w-full lg:w-9/12 mx-auto flex flex-col space-y-5 lg:space-y-10 lg:py-8 py-5 items-center min-h-screen"
   >
-    <div class="font-bold text-5xl text-center pt-10 pb-5">Recent Works</div>
+    <div class="font-bold text-3xl lg:text-5xl text-center lg:pt-10 pb-5">Recent Works</div>
 
     <Project
-      v-for="(item, index) in projects"
-      :key="index"
-      :direction="index % 2 === 0 ? 'right' : 'reverse'"
-      :project="item"
+        v-for="(item, index) in projects"
+        :key="index"
+        :direction="index % 2 === 0 ? 'right' : 'reverse'"
+        :project="item"
     >
       <template v-if="item.id === 2" #additional-project-description>
         <div
-          class="py-8 font-lexend border-y w-full border-black flex justify-between"
+            class="py-8 font-lexend border-y w-full border-black flex justify-between"
         >
-          <div class="w-5/12 flex space-x-2 items-end">
-            <span class="text-5xl font-bold"> 100k+ </span>
-
+          <div class="w-6/12 flex space-x-2 items-end">
+            <span class="text-4xl lg:text-5xl font-bold"> 100k+ </span>
             <span class="text-lg"> Installs </span>
           </div>
 
-          <div class="w-5/12">
+          <div class="w-6/12">
             <div class="flex space-x-2 items-end">
-              <span class="text-5xl font-bold">
+              <span class="text-4xl lg:text-5xl font-bold">
                 4.7<box-icon class="fill-yellow-400" name="star" type="solid" />
               </span>
-
               <span class="text-lg"> Rating </span>
             </div>
           </div>
@@ -33,11 +31,11 @@
       </template>
     </Project>
 
-    <div class="flex w-full font-lexend items-center justify-between py-10">
-      <span class="font-semibold text-5xl">And that is not all..</span>
+    <div class="flex w-11/12 lg:w-full font-lexend items-center justify-between py-10">
+      <span class="font-semibold text-lg lg:text-5xl">And that is not all..</span>
       <span
-        class="flex space-x-2 group w-fit px-5 py-2 cursor-pointer text-white bg-brand-350 shadow-lg hover:scale-105 rounded-3xl items-center"
-        >View All Works</span
+          class="flex lg:text-lg text-sm space-x-2 group w-fit px-5 py-2 cursor-pointer text-white bg-brand-350 shadow-lg hover:scale-105 rounded-3xl items-center"
+      >View All Works</span
       >
     </div>
   </section>
