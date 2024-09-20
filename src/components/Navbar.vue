@@ -41,7 +41,10 @@
 
         <!-- Call-to-Action Button (Desktop) -->
         <div class="bg-brand-350 rounded-lg px-4 py-2 text-white cursor-pointer hover:scale-105 transition-transform">
-          Book a 15-min Call
+          <a
+              href="#contactUs">
+            Book a 15-min Call
+          </a>
         </div>
       </ul>
 
@@ -62,7 +65,10 @@
 
         <!-- Call-to-Action Button (Mobile) -->
         <div class="bg-brand-350 rounded-lg px-6 py-2 text-white cursor-pointer hover:scale-105 transition-transform">
-          Book a 15-min Call
+          <a
+              href="#contactUs">
+            Book a 15-min Call
+          </a>
         </div>
 
         <!-- X button to close the menu -->
@@ -87,7 +93,7 @@ const sections = [
   { name: "Home", linkId: "#home" },
   { name: "About", linkId: "#about" },
   { name: "Projects", linkId: "#projects" },
-  { name: "Contact", linkId: "#contact" },
+  { name: "Contact", linkId: "#contactUs" },
 ];
 
 const route = useRouter().currentRoute;

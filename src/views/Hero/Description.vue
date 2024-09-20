@@ -27,11 +27,13 @@
 
     <div class="flex items-center lg:space-y-4 space-x-5 buttons lg:w-full">
       <button class="bg-brand-400 rounded-lg hover:scale-105 text-sm lg:text-lg px-4 py-2 lg:px-6 lg:py-3 text-white font-semibold">
-        Book a 15-min Call
+        <a href="#contactUs">
+          Book a 15-min Call
+        </a>
       </button>
       <a
           class="inline-flex w-fit items-center justify-center text-sm lg:text-lg font-medium cursor-pointer hover:scale-105 hover:font-semibold hover:underline duration-200 px-4 lg:py-1"
-          href="#contact"
+          href="#projects"
       >See Recent Works
         <ChevronRightIcon class="w-6 pl-1" />
       </a>

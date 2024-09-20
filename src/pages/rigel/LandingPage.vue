@@ -5,7 +5,8 @@
     <About id="about" ref="aboutRef"></About>
     <Projects id="projects" ref="projectsRef"></Projects>
     <Team ref="teamRef" data-aos="fade-up"></Team>
-    <Contact id="contact" ref="contactRef" data-aos="fade-up"></Contact>
+    <ContactUs id="contactUs" ref="contactUsRef" data-aos="fade-up"></ContactUs>
+<!--    <Contact id="contact" ref="contactRef" data-aos="fade-up"></Contact>-->
   </main>
 </template>
 
@@ -19,6 +20,7 @@ import { nextTick, onBeforeUnmount, onMounted, ref } from "vue";
 import { useNavBarStore } from "../../store/navbar_store.js";
 import Services from "../../views/Services.vue";
 import Projects from "../../views/Projects/Projects.vue";
+import ContactUs from "../../views/ContactUs.vue";
 
 const navBarStore = useNavBarStore();
 

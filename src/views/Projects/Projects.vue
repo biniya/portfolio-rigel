@@ -1,5 +1,6 @@
 <template>
   <section
+      id="#projects"
       class="w-full lg:w-9/12 mx-auto flex flex-col space-y-5 lg:space-y-10 lg:py-8 py-5 items-center min-h-screen"
   >
     <div class="font-bold text-3xl lg:text-5xl text-center lg:pt-10 pb-5">Recent Works</div>
@@ -35,8 +36,9 @@
       <span class="font-semibold text-lg lg:text-5xl">And that is not all..</span>
       <span
           class="flex lg:text-lg text-sm space-x-2 group w-fit px-5 py-2 cursor-pointer text-white bg-brand-350 shadow-lg hover:scale-105 rounded-3xl items-center"
+          @click="$router.push({ name: 'Projects' })"
       >View All Works</span
-      >
+        >
     </div>
   </section>
 </template>
@@ -61,7 +63,7 @@ const projects = [
     ],
     link: "/SMS",
     image: rigelSMS,
-    demoLink: null,
+    demoLink: "/SMS",
   },
   {
     id: 2,

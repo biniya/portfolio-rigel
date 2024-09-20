@@ -82,11 +82,12 @@
       </div>
 
       <div class="flex w-full justify-center">
-        <span
+        <router-link
+            to="/team"
             class="flex space-x-2 text-sm lg:text-lg font-medium group w-fit px-5 py-2 cursor-pointer text-white bg-brand-350 shadow-lg hover:scale-105 rounded-3xl items-center"
         >
           View Full Team
-        </span>
+        </router-link>
       </div>
     </div>
   </section>
@@ -127,6 +128,7 @@ const teamMembers = [
         "As a dynamic leader and skilled full-stack developer, Biniyam's strategic insights and technical expertise drive our company's success and growth.",
     linkedIn: "https://www.linkedin.com/in/biniyam-lemma-2a580615a/",
     github: "https://github.com/biniya",
+    upwork: "https://www.upwork.com/freelancers/~019d74242b5d7ffda9",
     location: "Ethiopia",
   },
 ];

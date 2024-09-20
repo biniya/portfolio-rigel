@@ -2,8 +2,7 @@
   <div
       ref="aboutSection"
       id="about"
-      class="max-h-fit w-full font-lexend flex flex-col lg:flex-row justify-evenly py-5 bg-gray-100"
-      @wheel="handleWheel"
+      class="w-full font-lexend flex flex-col lg:flex-row justify-evenly py-5 bg-gray-100"
   >
     <!-- Left Tabs Section -->
     <section class="w-full lg:w-5/12 flex flex-col space-y-10 px-4 lg:px-0">
@@ -33,12 +32,6 @@
           >
             {{ item.title }}
           </div>
-          <div
-              :class="index === activeTab ? 'inline-flex' : 'hidden'"
-              class="w-7/12 opacity-80 text-sm sm:text-base lg:text-lg"
-          >
-            {{ item.description }}
-          </div>
         </div>
       </div>
     </section>
@@ -46,102 +39,55 @@
     <!-- Right Content Section -->
     <section class="w-full lg:w-4/12 text-base sm:text-lg flex items-center leading-loose opacity-70 mt-10 lg:mt-0 px-4 lg:px-0">
       <div class="bg-white rounded-xl text-center shadow-sm p-4">
-        Whether you want to consult an idea, add missing capabilities, quickly
-        expand your team, or hand over a project - we've got you covered.
+        {{ tabs[activeTab].description }}
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
-import {ref, onMounted, onBeforeUnmount} from "vue";
+import { ref } from "vue";
 
 // Define the tabs content
 const tabs = ref([
   {
     title: "Ideate",
-    description: "Identify, shape and validate your product idea",
+    description: "Identify, shape and validate your product idea.",
   },
   {
     title: "Design",
-    description: "Craft beautiful digital experiences across platforms",
+    description: "Craft beautiful digital experiences across platforms.",
   },
   {
     title: "Develop",
-    description: "Bring products to life with world-class engineering",
+    description: "Bring products to life with world-class engineering.",
   },
   {
     title: "Maintain",
-    description: "Safeguard your product's quality and reliability",
+    description: "Safeguard your product's quality and reliability.",
   },
   {
     title: "Scale",
-    description: "Gain flexibility to adjust and expand on the fly",
+    description: "Gain flexibility to adjust and expand on the fly.",
   },
 ]);
 
 const activeTab = ref(0);
-const lastTabIndex = tabs.value.length - 1;
-let isScrolling = false; // to prevent rapid scrolling
-const aboutSection = ref(null);
 
 // Set the active tab when clicked
 const setActiveTab = (index) => {
   activeTab.value = index;
 };
-
-// Custom scrolling within the About section with delay
-const handleWheel = (event) => {
-  if (
-      (activeTab.value === 0 && event.deltaY < 0) ||
-      (activeTab.value === lastTabIndex && event.deltaY > 0)
-  ) {
-    return;
-  }
-
-  event.preventDefault();
-
-  if (isScrolling) return;
-  isScrolling = true;
-
-  if (event.deltaY > 0 && activeTab.value < lastTabIndex) {
-    activeTab.value++;
-  } else if (event.deltaY < 0 && activeTab.value > 0) {
-    activeTab.value--;
-  }
-
-  setTimeout(() => {
-    isScrolling = false;
-  }, 1000);
-};
-
-// Detect if the About section is in view and center it
-const scrollToCenter = () => {
-  const aboutSectionElement = aboutSection.value;
-  const rect = aboutSectionElement.getBoundingClientRect();
-  const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-
-  if (isVisible) {
-    aboutSectionElement.scrollIntoView({behavior: "smooth", block: "center"});
-  }
-};
-
-// Add event listener to detect when the About section is in view
-onMounted(() => {
-  window.addEventListener("scroll", scrollToCenter);
-});
-
-// Clean up the event listener when the component is unmounted
-onBeforeUnmount(() => {
-  window.removeEventListener("scroll", scrollToCenter);
-  window.removeEventListener("wheel", handleWheel);
-});
 </script>
 
 <style scoped>
-/* Make transitions and interactions smoother */
+/* Style for the tab transitions and interaction */
 .tab-content {
   transition: opacity 0.3s ease-in-out;
+}
+
+.item-0, .item-1, .item-2, .item-3, .item-4 {
+  transition: background-color 0.3s ease;
 }
 
 [v-cloak] {
