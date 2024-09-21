@@ -6,7 +6,7 @@
     </div>
 
     <!-- Services list -->
-    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center lg:w-10/12 w-9/12 mt-8">
+    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center lg:w-10/12 w-11/12 mt-8">
       <div
           v-for="(service, index) in services"
           :key="index"

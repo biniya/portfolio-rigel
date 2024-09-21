@@ -1,13 +1,13 @@
 <template>
-  <div class="w-full h-auto lg:h-3/5 lg:py-3 py-0 flex-col items-center md:space-y-0 lg:space-y-10 space-y-8 flex justify-evenly">
-    <div class="flex flex-col w-full text-center lg:justify-center font-lexend space-y-6 lg:space-y-10">
-      <div class="flex flex-col text-xl lg:text-6xl text-black font-semibold lg:w-full lg:text-start lg:space-y-2">
-        <span class="title">More Than Clients,</span><br />
-        <span class="relative whitespace-nowrap lg:w-fit title-part w-full">
+  <div class="w-full h-auto lg:h-3/5 lg:py-3 py-0 flex-col items-center md:space-y-0 lg:space-y-10 space-y-14 flex justify-evenly">
+    <div class="flex flex-col w-full text-center lg:justify-center font-lexend space-y-6 lg:space-y-14">
+      <div class="flex flex-col text-4xl lg:text-6xl text-black font-semibold lg:w-full lg:text-start lg:space-y-2 space-y-6">
+        <span class="title ">More Than Clients,</span><br class="hidden md:inline-block"/>
+        <span class="relative whitespace-nowrap lg:w-fit w-full bg">
           <span class="relative">We Become </span>
           <svg
               aria-hidden="true"
-              class="absolute right-0 top-[80%] h-[0.58em] w-5/12 fill-brand-350"
+              class="absolute right-0 top-[80%] h-[0.58em] w-7/12 md:w-5/12 fill-brand-350"
               preserveAspectRatio="none"
               viewBox="0 0 418 42"
           >
@@ -19,7 +19,7 @@
         </span>
       </div>
 
-      <p class="lg:w-11/12 flex lg:justify-start lg:mt-8 text-sm lg:text-lg font-light text-gray-600 sm:items-center w-full">
+      <p class="hidden lg:w-11/12 md:flex lg:justify-start lg:mt-8 text-sm lg:text-lg font-light text-gray-600 sm:items-center w-full">
         We invest in understanding your vision and collaborate for success.<br />
         Together, we'll strategize and celebrate wins.
       </p>
