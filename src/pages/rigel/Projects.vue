@@ -14,16 +14,16 @@
         <!-- Gebeta specific project description -->
         <template v-if="item.id === 2" #additional-project-description>
           <div class="py-8 font-lexend border-y w-full border-black flex justify-between">
-            <div class="w-5/12 flex md:flex-row flex-col space-x-2 items-end">
-              <span class="text-5xl font-bold">100k+</span>
-              <span class="text-lg">Installs</span>
+            <div class="w-5/12 flex flex-row space-x-2 items-end">
+              <span class="text-2xl md:text-5xl font-bold">100k+</span>
+              <span class="text-sm md:text-lg">Installs</span>
             </div>
             <div class="w-5/12">
-              <div class="flex md:flex-row flex-col md:space-x-2 items-end">
-                <span class="text-5xl font-bold">
+              <div class="flex flex-row md:space-x-2 items-end space-x-2">
+                <span class="text-2xl md:text-5xl font-bold">
                   4.7<box-icon class="fill-yellow-400" name="star" type="solid" />
                 </span>
-                <span class="text-lg">Rating</span>
+                <span class="text-sm md:text-lg">Rating</span>
               </div>
             </div>
           </div>
@@ -32,13 +32,13 @@
         <!-- Elsaro Patients App specific description -->
         <template v-if="item.id === 7" #additional-project-description>
           <div class="py-8 font-lexend border-y w-full border-black flex justify-between">
-            <div class="w-5/12 flex md:flex-row flex-col space-x-2 items-end">
-              <span class="text-5xl font-bold">50k+</span>
-              <span class="text-lg">Installs</span>
+            <div class="w-5/12 flex flex-row space-x-2 items-end">
+              <span class="text-2xl md:text-5xl font-bold">50k+</span>
+              <span class="text-sm md:text-lg">Installs</span>
             </div>
             <div class="w-5/12">
-              <div class="flex md:flex-row flex-col space-x-2 items-end">
-                <span class="text-5xl font-bold">
+              <div class="flex flex-row md:space-x-2 items-end space-x-2">
+                <span class="text-2xl md:text-5xl font-bold">
                   4.5<box-icon class="fill-yellow-400" name="star" type="solid" />
                 </span>
                 <span class="text-lg">Rating</span>
@@ -50,13 +50,13 @@
         <!-- Elsaro Doctors App specific description -->
         <template v-if="item.id === 8" #additional-project-description>
           <div class="py-8 font-lexend border-y w-full border-black flex justify-between">
-            <div class="w-5/12 flex md:flex-row flex-col space-x-2 items-end">
-              <span class="text-5xl font-bold">10k+</span>
+            <div class="w-5/12 flex flex-row space-x-2 items-end">
+              <span class="text-2xl md:text-5xl font-bold">10k+</span>
               <span class="text-lg">Installs</span>
             </div>
             <div class="w-5/12">
-              <div class="flex md:flex-row flex-col space-x-2 items-end">
-                <span class="text-5xl font-bold">
+              <div class="flex flex-row md:space-x-2 items-end space-x-2">
+                <span class="text-2xl md:text-5xl font-bold">
                   4.8<box-icon class="fill-yellow-400" name="star" type="solid" />
                 </span>
                 <span class="text-lg">Rating</span>
@@ -82,6 +82,11 @@ import Project from "../../views/Projects/ProjectCard.vue";
 import rigelSMS from "../../assets/projects/rigel2.png";
 import betPlus from "../../assets/projects/bet+.png";
 import gebeta from "../../assets/projects/gebeta1.png";
+import elsaro from "../../assets/projects/elsaro.png";
+import telemedicine from "../../assets/projects/elsaroTelemedicine.jpg";
+import doctors from "../../assets/projects/elsaroDoctors.png";
+import bingo from "../../assets/projects/bingo.png";
+
 const projects = [
   {
     id: 1,
@@ -121,25 +126,28 @@ const projects = [
   {
     id: 4,
     name: "Elsaro - Diagnosis Center",
-    theme: "bg-[#34A853]",
+    theme: "bg-[#42568c]",
     category: "Web app",
     description: [
-      "A modern diagnosis center offering advanced medical services. Patients can book appointments, view test results, and consult with doctors online.",
+      "A cutting-edge diagnostics center equipped with the latest medical technologies, offering a wide range of diagnostic and health services tailored to meet the needs of patients. " +
+      "Patients can seamlessly book appointments on the app provided, receive real-time access to their diagnostic reports, and consult with our team of specialized doctors through secure video consultations. "
     ],
     link: "https://elsaro.net",
-    image: null,
+    image: elsaro,
     demoLink: "https://elsaro.net",
   },
   {
     id: 5,
     name: "Kiwi Bingo",
-    theme: "bg-[#F59E0B]",
+    theme: "bg-[#1d9f32]",
     category: "Web app",
     description: [
-      "Kiwi Bingo is an online bingo platform where users can deposit, play, and withdraw money while enjoying a smooth and interactive gaming experience.",
+      "Kiwi Bingo is a modern online bingo platform offering a seamless experience for players to deposit, play, and withdraw winnings securely. " +
+      "Featuring a variety of bingo games, and a user-friendly interface, it provides an engaging and interactive environment for both casual and competitive players. " +
+      "With secure payments and fast withdrawals, Kiwi Bingo brings excitement and rewards to the online bingo community."
     ],
     link: "https://kiwibingo.com",
-    image: null,
+    image: bingo,
     demoLink: null,
   },
   {
@@ -148,7 +156,8 @@ const projects = [
     theme: "bg-[#0D9488]",
     category: "Web app",
     description: [
-      "Raka Cars is an online platform for buying and selling cars. Users can post their cars for sale or browse listings to find their next vehicle.",
+      "Raka Cars is an online marketplace for buying and selling vehicles. Users can easily list their cars for sale or browse a wide range of listings to find their next vehicle. With a user-friendly interface, " +
+      "Raka Cars simplifies the car trading process for both sellers and buyers."
     ],
     link: "https://rakacars.com/",
     image: null,
@@ -157,23 +166,23 @@ const projects = [
   {
     id: 7,
     name: "Elsaro - Patients App",
-    theme: "bg-[#3B82F6]",
+    theme: "bg-[#166535]",
     category: "Mobile app",
     description: [
       "A mobile app for patients to manage their appointments, view test results, and communicate with doctors from the Elsaro Diagnosis Center.",
     ],
-    image: null,
+    image: telemedicine,
     demoLink: null,
   },
   {
     id: 8,
     name: "Elsaro - Doctors App",
-    theme: "bg-[#6B7280]",
+    theme: "bg-[#1e40ae]",
     category: "Mobile app",
     description: [
       "A mobile app for doctors at Elsaro Diagnosis Center to manage their patient appointments, view test results, and consult with patients online.",
     ],
-    image: null,
+    image: doctors,
     demoLink: null,
   }
 ];

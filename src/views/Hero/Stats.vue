@@ -39,27 +39,27 @@
   <!-- For mobile screens -->
   <div v-if="isMobile" class="w-full flex flex-col justify-center items-center gap-6 mt-5">
 
-   <div class="flex w-full gap-4">
-     <!-- Experience Stat Card -->
-     <div class="w-full max-w-sm p-4 rounded-lg bg-white relative overflow-hidden">
-       <div class="absolute inset-0 bg-gradient-to-bl from-sky-500 via-purple-500 to-indigo-700 opacity-10 rounded-lg"></div>
-       <div class="relative z-10 flex flex-col items-center">
-         <div class="text-4xl font-bold text-gray-800 mb-1">{{ experience }} +</div>
-         <div class="text-sm font-medium text-gray-600">Years of Experience</div>
-       </div>
-     </div>
+    <div class="flex w-full gap-4" data-aos="fade-up" data-aos-duration="1000">
+      <!-- Experience Stat Card -->
+      <div class="w-full max-w-sm p-4 rounded-lg bg-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-bl from-sky-500 via-purple-500 to-indigo-700 opacity-10 rounded-lg"></div>
+        <div class="relative z-10 flex flex-col items-center">
+          <div class="text-4xl font-bold text-gray-800 mb-1">{{ experience }} +</div>
+          <div class="text-sm font-medium text-gray-600">Years of Experience</div>
+        </div>
+      </div>
 
-     <!-- Developers Stat Card -->
-     <div class="w-full max-w-sm p-4 rounded-lg bg-white relative overflow-hidden">
-       <div class="absolute inset-0 bg-gradient-to-bl from-green-400 via-teal-500 to-blue-600 opacity-10 rounded-lg"></div>
-       <div class="relative z-10 flex flex-col items-center">
-         <div class="text-4xl font-bold text-gray-800 mb-1">{{ developers }} +</div>
-         <div class="text-sm font-medium text-gray-600">Developers</div>
-       </div>
-     </div>
-   </div>
+      <!-- Developers Stat Card -->
+      <div class="w-full max-w-sm p-4 rounded-lg bg-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-bl from-green-400 via-teal-500 to-blue-600 opacity-10 rounded-lg"></div>
+        <div class="relative z-10 flex flex-col items-center">
+          <div class="text-4xl font-bold text-gray-800 mb-1">{{ developers }} +</div>
+          <div class="text-sm font-medium text-gray-600">Developers</div>
+        </div>
+      </div>
+    </div>
 
-    <div class="flex w-full gap-4">
+    <div class="flex w-full gap-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
       <!-- Review Stat Card -->
       <div class="w-full max-w-sm p-4 rounded-lg bg-white relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-bl from-yellow-400 via-orange-500 to-red-600 opacity-10 rounded-lg"></div>
@@ -80,12 +80,14 @@
     </div>
 
   </div>
+
 </template>
 
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import GradientBorder from "../../components/GradientBorder.vue";
+import AOS from 'aos';
 
 const isMobile = ref(window.innerWidth < 768);
 
@@ -116,6 +118,8 @@ const countUp = (finalValue, refStat, intervalTime = 50) => {
 };
 
 onMounted(() => {
+  AOS.init(); // Initialize AOS
+
   if (isMobile.value) {
     countUp(7, experience);
     countUp(12, developers);

@@ -1,18 +1,17 @@
 <template>
-  <section class="w-full flex justify-center font-lexend bg-gray-50">
-    <div class="flex flex-col space-y-5 lg:space-y-20 w-11/12 h-full py-10 font-inter">
+  <section class="w-full flex justify-center font-lexend pt-20 md:pt-28 md:pb-0">
+    <div class="flex flex-col space-y-5 lg:space-y-5 w-11/12 h-full font-inter">
       <div
-          class="flex flex-col w-full min-h-full text-center lg:pr-5 justify-evenly items-center text-lg lg:text-4xl font-semibold space-y-2"
+          class="flex w-full min-h-full text-center justify-evenly items-center text-lg lg:text-4xl font-semibold"
       >
-        <div>Meet the Full Team</div>
-        <div>Our exceptional members</div>
+        Meet the Full Team
       </div>
 
       <div class="flex lg:flex-row lg:flex-wrap flex-col gap-2 justify-center">
         <div
             v-for="(member, index) in fullTeamMembers"
             :key="index"
-            class="p-3 my-2 w-full md:w-[40rem] flex flex-col md:flex-row items-center bg-white shadow-sm rounded-xl"
+            class="p-3 my-2 w-full md:w-[35rem] flex flex-col md:flex-row items-center bg-white shadow-md rounded-xl"
         >
           <div
               class="w-full md:w-4/12 flex flex-col items-center space-y-3 justify-evenly"

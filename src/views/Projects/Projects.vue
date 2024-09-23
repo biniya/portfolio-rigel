@@ -16,23 +16,23 @@
             class="py-8 font-lexend border-y w-full border-black flex justify-between"
         >
           <div class="w-6/12 flex space-x-2 items-end">
-            <span class="text-4xl lg:text-5xl font-bold"> 100k+ </span>
-            <span class="text-lg"> Installs </span>
+            <span class="text-2xl lg:text-5xl font-bold"> 100k+ </span>
+            <span class="text-sm md:text-lg"> Installs </span>
           </div>
 
           <div class="w-6/12">
             <div class="flex space-x-2 items-end">
-              <span class="text-4xl lg:text-5xl font-bold">
+              <span class="text-2xl lg:text-5xl font-bold">
                 4.7<box-icon class="fill-yellow-400" name="star" type="solid" />
               </span>
-              <span class="text-lg"> Rating </span>
+              <span class="text-sm md:text-lg"> Rating </span>
             </div>
           </div>
         </div>
       </template>
     </Project>
 
-    <div class="flex w-11/12 lg:w-full font-lexend items-center justify-between py-10">
+    <div class="flex w-11/12 lg:w-full font-lexend items-center justify-between py-1 md:py-10">
       <span class="font-semibold text-lg lg:text-5xl">And that is not all..</span>
       <span
           class="flex lg:text-lg text-sm space-x-2 group w-fit px-5 py-2 cursor-pointer text-white bg-brand-350 shadow-lg hover:scale-105 rounded-3xl items-center"
