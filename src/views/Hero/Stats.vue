@@ -2,7 +2,7 @@
   <!-- For screens larger than 1409px x 922px -->
   <div
       v-if="showLargeScreen"
-      class="w-full lg:w-5/12 2xl:w-5/12 flex flex-wrap justify-evenly items-center stats gap-4 py-10"
+      class="w-full lg:w-5/12 2xl:w-5/12 flex flex-wrap justify-evenly items-center stats gap-6 py-10 lg:-mt-24"
   >
     <GradientBorder
         class="w-32 h-28 md:w-36 md:h-32 flex flex-col justify-center items-center"
@@ -178,7 +178,7 @@ onMounted(() => {
 .stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 6rem;
 }
 
 div {
