@@ -12,7 +12,7 @@
           class="md:!w-[48%] md:!h-[30rem] w-full !bg-gray-100 !text-start rounded-xl shadow-sm"
       >
         <!-- Gebeta specific project description -->
-        <template v-if="item.id === 2" #additional-project-description>
+        <template v-if="item.id === 4" #additional-project-description>
           <div class="py-8 font-lexend border-y w-full border-black flex justify-between">
             <div class="w-5/12 flex flex-row space-x-2 items-end">
               <span class="text-2xl md:text-5xl font-bold">100k+</span>
@@ -83,9 +83,10 @@ import rigelSMS from "../../assets/projects/rigel2.png";
 import betPlus from "../../assets/projects/bet+.png";
 import gebeta from "../../assets/projects/gebeta1.png";
 import elsaro from "../../assets/projects/elsaro.png";
-import telemedicine from "../../assets/projects/elsaroTelemedicine.jpg";
+import telemedicine from "../../assets/projects/elsaroTelemedicine.png";
 import doctors from "../../assets/projects/elsaroDoctors.png";
 import bingo from "../../assets/projects/bingo.png";
+import raka from "../../assets/projects/raka.png";
 
 const projects = [
   {
@@ -103,14 +104,16 @@ const projects = [
   },
   {
     id: 2,
-    name: "Gebeta App",
-    theme: "bg-rose-500",
-    category: "Mobile app",
+    name: "Elsaro - Diagnosis Center",
+    theme: "bg-[#42568c]",
+    category: "Web app",
     description: [
-      "This app uses Accessibility services to provide users with a convenient and easy-to-use way to manage their telecoms services. The app allows users to recharge their balance, send call me backs, transfer credit, buy and send Ethio Gebeta packages, view their remaining balance and package amount, and track their expenses.",
+      "A cutting-edge diagnostics center equipped with the latest medical technologies, offering a wide range of diagnostic and health services tailored to meet the needs of patients. " +
+      "Patients can seamlessly book appointments on the app provided, receive real-time access to their diagnostic reports, and consult with our team of specialized doctors through secure video consultations. "
     ],
-    image: gebeta,
-    demoLink: "https://gebeta.apk.gold/",
+    link: "https://elsaro.net",
+    image: elsaro,
+    demoLink: "https://elsaro.net",
   },
   {
     id: 3,
@@ -125,16 +128,14 @@ const projects = [
   },
   {
     id: 4,
-    name: "Elsaro - Diagnosis Center",
-    theme: "bg-[#42568c]",
-    category: "Web app",
+    name: "Gebeta App",
+    theme: "bg-rose-500",
+    category: "Mobile app",
     description: [
-      "A cutting-edge diagnostics center equipped with the latest medical technologies, offering a wide range of diagnostic and health services tailored to meet the needs of patients. " +
-      "Patients can seamlessly book appointments on the app provided, receive real-time access to their diagnostic reports, and consult with our team of specialized doctors through secure video consultations. "
+      "This app uses Accessibility services to provide users with a convenient and easy-to-use way to manage their telecoms services. The app allows users to recharge their balance, send call me backs, transfer credit, buy and send Ethio Gebeta packages, view their remaining balance and package amount, and track their expenses.",
     ],
-    link: "https://elsaro.net",
-    image: elsaro,
-    demoLink: "https://elsaro.net",
+    image: gebeta,
+    demoLink: "https://gebeta.apk.gold/",
   },
   {
     id: 5,
@@ -160,7 +161,7 @@ const projects = [
       "Raka Cars simplifies the car trading process for both sellers and buyers."
     ],
     link: "https://rakacars.com/",
-    image: null,
+    image: raka,
     demoLink: "https://rakacars.com/",
   },
   {

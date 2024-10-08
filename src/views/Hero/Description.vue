@@ -1,9 +1,9 @@
 <template>
   <div class="w-full h-auto lg:h-3/5 lg:py-3 py-0 flex-col items-center md:space-y-0 lg:space-y-10 space-y-14 flex justify-evenly">
     <div class="flex flex-col w-full text-center lg:justify-center font-lexend space-y-6 lg:space-y-14">
-      <div class="flex flex-col text-4xl lg:text-6xl text-black font-semibold lg:w-full lg:text-start lg:space-y-2 space-y-6">
-        <span class="title ">More Than Clients,</span><br class="hidden md:inline-block"/>
-        <span class="relative whitespace-nowrap lg:w-fit w-full bg">
+      <div class="flex flex-col text-black font-semibold lg:w-full lg:text-start lg:space-y-2 space-y-6">
+        <span class="title text-[2.5rem] lg:text-6xl">More Than Clients,</span><br class="hidden md:inline-block"/>
+        <span class="relative whitespace-nowrap lg:w-fit w-full text-4xl lg:text-6xl">
           <span class="relative">We Become </span>
           <svg
               aria-hidden="true"

@@ -41,7 +41,7 @@
               <img
                   :src="project.image"
                   alt="project-name"
-                  class="md:h-fit rounded-2xl object-contain h-[12rem] sm:h-[15rem] w-[40rem] z-10"
+                  class="md:h-full rounded-2xl object-contain h-[12rem] sm:h-[15rem] w-[40rem] z-10"
                   loading="eager"
               />
             </div>

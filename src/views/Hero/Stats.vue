@@ -47,49 +47,49 @@
   </div>
 
   <!-- For screens smaller than 768px (mobile) -->
-  <div v-if="isMobile" class="w-full flex flex-col justify-center items-center gap-6 mt-5">
-    <div class="flex w-full gap-4" data-aos="fade-up" data-aos-duration="1000">
-      <!-- Experience Stat Card -->
-      <div class="w-full max-w-sm p-4 rounded-lg bg-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-bl from-sky-500 via-purple-500 to-indigo-700 opacity-10 rounded-lg"></div>
-        <div class="relative z-10 flex flex-col items-center">
-          <div class="text-4xl font-bold text-gray-800 mb-1">{{ experience }}+</div>
-          <div class="text-sm font-medium text-gray-600">Experience</div>
-        </div>
-      </div>
+  <!--  <div v-if="isMobile" class="w-full flex flex-col justify-center items-center gap-6 mt-5">-->
+<!--    <div class="flex w-full gap-4" data-aos="fade-up" data-aos-duration="1000">-->
+<!--      &lt;!&ndash; Experience Stat Card &ndash;&gt;-->
+<!--      <div class="w-full max-w-sm p-4 rounded-lg bg-white relative overflow-hidden">-->
+<!--        <div class="absolute inset-0 bg-gradient-to-bl from-sky-500 via-purple-500 to-indigo-700 opacity-10 rounded-lg"></div>-->
+<!--        <div class="relative z-10 flex flex-col items-center">-->
+<!--          <div class="text-4xl font-bold text-gray-800 mb-1">{{ experience }}+</div>-->
+<!--          <div class="text-sm font-medium text-gray-600">Experience</div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <!-- Developers Stat Card -->
-      <div class="w-full max-w-sm p-4 rounded-lg bg-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-bl from-green-400 via-teal-500 to-blue-600 opacity-10 rounded-lg"></div>
-        <div class="relative z-10 flex flex-col items-center">
-          <div class="text-4xl font-bold text-gray-800 mb-1">{{ developers }}+</div>
-          <div class="text-sm font-medium text-gray-600">Developers</div>
-        </div>
-      </div>
-    </div>
+<!--      &lt;!&ndash; Developers Stat Card &ndash;&gt;-->
+<!--      <div class="w-full max-w-sm p-4 rounded-lg bg-white relative overflow-hidden">-->
+<!--        <div class="absolute inset-0 bg-gradient-to-bl from-green-400 via-teal-500 to-blue-600 opacity-10 rounded-lg"></div>-->
+<!--        <div class="relative z-10 flex flex-col items-center">-->
+<!--          <div class="text-4xl font-bold text-gray-800 mb-1">{{ developers }}+</div>-->
+<!--          <div class="text-sm font-medium text-gray-600">Developers</div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <div class="flex w-full gap-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-      <!-- Review Stat Card -->
-      <div class="w-full max-w-sm p-4 rounded-lg bg-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-bl from-yellow-400 via-orange-500 to-red-600 opacity-10 rounded-lg"></div>
-        <div class="relative z-10 flex flex-col items-center">
-          <div class="text-4xl font-bold text-gray-800 mb-1">{{ reviews }}
-            <box-icon class="fill-yellow-400" name="star" type="solid" />
-          </div>
-          <div class="text-sm font-medium text-gray-600">Reviews</div>
-        </div>
-      </div>
+<!--    <div class="flex w-full gap-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">-->
+<!--      &lt;!&ndash; Review Stat Card &ndash;&gt;-->
+<!--      <div class="w-full max-w-sm p-4 rounded-lg bg-white relative overflow-hidden">-->
+<!--        <div class="absolute inset-0 bg-gradient-to-bl from-yellow-400 via-orange-500 to-red-600 opacity-10 rounded-lg"></div>-->
+<!--        <div class="relative z-10 flex flex-col items-center">-->
+<!--          <div class="text-4xl font-bold text-gray-800 mb-1">{{ reviews }}-->
+<!--            <box-icon class="fill-yellow-400" name="star" type="solid" />-->
+<!--          </div>-->
+<!--          <div class="text-sm font-medium text-gray-600">Reviews</div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <!-- Projects Stat Card -->
-      <div class="w-full max-w-sm p-4 rounded-lg bg-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-bl from-purple-400 via-pink-500 to-red-700 opacity-10 rounded-lg"></div>
-        <div class="relative z-10 flex flex-col items-center">
-          <div class="text-4xl font-bold text-gray-800 mb-1">{{ projects }}+</div>
-          <div class="text-sm font-medium text-gray-600">Projects</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!--      &lt;!&ndash; Projects Stat Card &ndash;&gt;-->
+<!--      <div class="w-full max-w-sm p-4 rounded-lg bg-white relative overflow-hidden">-->
+<!--        <div class="absolute inset-0 bg-gradient-to-bl from-purple-400 via-pink-500 to-red-700 opacity-10 rounded-lg"></div>-->
+<!--        <div class="relative z-10 flex flex-col items-center">-->
+<!--          <div class="text-4xl font-bold text-gray-800 mb-1">{{ projects }}+</div>-->
+<!--          <div class="text-sm font-medium text-gray-600">Projects</div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
 </template>
 
 <script setup>

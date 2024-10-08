@@ -10,27 +10,7 @@
         :key="index"
         :direction="index % 2 === 0 ? 'right' : 'reverse'"
         :project="item"
-    >
-      <template v-if="item.id === 2" #additional-project-description>
-        <div
-            class="py-8 font-lexend border-y w-full border-black flex justify-between"
-        >
-          <div class="w-6/12 flex space-x-2 items-end">
-            <span class="text-2xl lg:text-5xl font-bold"> 100k+ </span>
-            <span class="text-sm md:text-lg"> Installs </span>
-          </div>
-
-          <div class="w-6/12">
-            <div class="flex space-x-2 items-end">
-              <span class="text-2xl lg:text-5xl font-bold">
-                4.7<box-icon class="fill-yellow-400" name="star" type="solid" />
-              </span>
-              <span class="text-sm md:text-lg"> Rating </span>
-            </div>
-          </div>
-        </div>
-      </template>
-    </Project>
+    />
 
     <div class="flex w-11/12 lg:w-full font-lexend items-center justify-between py-1 md:py-10">
       <span class="font-semibold text-lg lg:text-5xl">And that is not all..</span>
@@ -50,41 +30,49 @@ import Project from "./ProjectCard.vue";
 import rigelSMS from "../../assets/projects/rigel2.png";
 import betPlus from "../../assets/projects/bet+.png";
 import gebeta from "../../assets/projects/gebeta1.png";
+import elsaro from "../../assets/projects/elsaro.png";
+import bingo from "../../assets/projects/bingo.png";
+import raka from "../../assets/projects/raka.png";
 
 const projects = [
   {
     id: 1,
-    name: "Rigel - School Management Software",
-    theme: "bg-[#3B3486]",
-    category: "Web and Mobile app",
+    name: "Raka Cars",
+    theme: "bg-[#0D9488]",
+    category: "Web app",
     description: [
-      "A groundbreaking platform seamlessly integrating AI into classrooms. Experience personalized teaching support and tailored assessments through our AI-Integrated Lesson Plans and Question Generator.",
-      "Gain real-time insights into student performance with Live Grade Reports and Rankings, while promoting accountability and a holistic view of behavior through Real-Time Absentee Recording and Inclusive Conduct Assessment.",
+      "Raka Cars is an online marketplace for buying and selling vehicles. Users can easily list their cars for sale or browse a wide range of listings to find their next vehicle. With a user-friendly interface, " +
+      "Raka Cars simplifies the car trading process for both sellers and buyers."
     ],
-    link: "/SMS",
-    image: rigelSMS,
-    demoLink: "/SMS",
+    link: "https://rakacars.com/",
+    image: raka,
+    demoLink: "https://rakacars.com/",
   },
   {
     id: 2,
-    name: "Gebeta App",
-    theme: "bg-rose-500",
-    category: "Mobile app",
+    name: "Elsaro - Diagnosis Center",
+    theme: "bg-[#42568c]",
+    category: "Web app",
     description: [
-      "This app uses Accessibility services to provide users with a convenient and easy-to-use way to manage their telecoms services. The app allows users to recharge their balance, send call me backs, transfer credit, buy and send Ethio Gebeta packages, view their remaining balance and package amount, and track their expenses.",
+      "A cutting-edge diagnostics center equipped with the latest medical technologies, offering a wide range of diagnostic and health services tailored to meet the needs of patients. " +
+      "Patients can seamlessly book appointments on the app provided, receive real-time access to their diagnostic reports, and consult with our team of specialized doctors through secure video consultations. "
     ],
-    image: gebeta,
-    demoLink: "https://gebeta.apk.gold/",
+    link: "https://elsaro.net",
+    image: elsaro,
+    demoLink: "https://elsaro.net",
   },
   {
     id: 3,
-    name: "Bet+ - Sports Betting Software",
-    theme: "bg-[#0C356A] ",
+    name: "Kiwi Bingo",
+    theme: "bg-[#1d9f32]",
     category: "Web app",
     description: [
-      "The ultimate sports betting platform that revolutionizes the way you connect with your favorite sports games and place your bets, all through a seamless web app experience. Designed to cater to sports enthusiasts and avid bettors, Offers a comprehensive suite of features that enhance the sports betting journey.",
+      "Kiwi Bingo is a modern online bingo platform offering a seamless experience for players to deposit, play, and withdraw winnings securely. " +
+      "Featuring a variety of bingo games, and a user-friendly interface, it provides an engaging and interactive environment for both casual and competitive players. " +
+      "With secure payments and fast withdrawals, Kiwi Bingo brings excitement and rewards to the online bingo community."
     ],
-    image: betPlus,
+    link: "https://kiwibingo.com",
+    image: bingo,
     demoLink: null,
   },
 ];
